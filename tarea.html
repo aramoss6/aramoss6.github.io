@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Lista de Tareas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mi Lista de Tareas</h1>
+            <button id="toggleTheme" class="theme-toggle">🌙 Modo Oscuro</button>
+            <button id="downloadPDF" class="pdf-button">📄 Descargar como PDF</button>
+        </div>
+        
+        <div class="input-section">
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="taskName">Nombre de la Tarea</label>
+                    <input type="text" id="taskName" placeholder="Escribe una tarea">
+                </div>
+                <div class="input-group">
+                    <label for="taskDate">Fecha Límite</label>
+                    <input type="date" id="taskDate">
+                </div>
+            </div>
+            
+            <div class="input-row">
+                <div class="input-group">
+                    <label for="taskPriority">Prioridad</label>
+                    <select id="taskPriority">
+                        <option value="baja">Baja</option>
+                        <option value="media" selected>Media</option>
+                        <option value="alta">Alta</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="taskStatus">Estado</label>
+                    <select id="taskStatus">
+                        <option value="pendiente" selected>Pendiente</option>
+                        <option value="en-progreso">En Progreso</option>
+                        <option value="finalizado">Finalizado</option>
+                    </select>
+                </div>
+            </div>
+            
+            <button class="add-button" onclick="addTask()">Agregar Tarea</button>
+        </div>
+        
+        <div class="tasks-section">
+            <div class="task-counter">
+                Total de tareas: <span id="taskCount">0</span>
+            </div>
+            <div id="taskList"></div>
+        </div>
+    </div>
+
+    <!-- Scripts para generar PDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    
+    <!-- Tu script principal -->
+    <script src="script.js"></script>
+</body>
+</html>
